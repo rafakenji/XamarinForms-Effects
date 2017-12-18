@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamFormEffect"
+             xmlns:effects="clr-namespace:XamFormEffect.Effects"
+             x:Class="XamFormEffect.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Practicing Effects in the Xamarin Forms" HorizontalOptions="CenterAndExpand" FontSize="Medium" FontAttributes="Bold"/>
+            
+            <Label Text="Pass only one parameter, pass Color obs:the ColorBefore get old color" HorizontalOptions="CenterAndExpand" />
+            <Entry Text="Test here">
+                <Entry.Effects>
+                    <effects:FocusEffect Color="LightCoral" />
+                </Entry.Effects>
+            </Entry>
+
+            <Label Text="Pass only two parameters, pass Color and ColorBefore" HorizontalOptions="CenterAndExpand" />
+            <Entry Text="Test here">
+                <Entry.Effects>
+                    <effects:FocusEffect Color="LightBlue" ColorBefore="#FFFFFF"/>
+                </Entry.Effects>
+            </Entry>
+
+            <Label Text="Effect at button" HorizontalOptions="CenterAndExpand" />
+            <Button Text="Click Here" Clicked="Button_Clicked" />
+            <Button x:Name="ButtonEnable" Text="Click Here" >
+                <Button.Effects>
+                    <effects:ClickExpandEffect />
+                </Button.Effects>
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
